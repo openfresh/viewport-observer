@@ -24,6 +24,8 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react-app": "^2.2.0",
     "eslint": "^3.19.0",
     "eslint-config-fresh": "^1.3.1",

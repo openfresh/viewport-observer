@@ -1,5 +1,9 @@
 {
   "presets": [
-    "react-app"
+    "react-app",
+    "es2015"
+  ],
+  "plugins": [
+    "transform-class-properties"
   ]
 }
