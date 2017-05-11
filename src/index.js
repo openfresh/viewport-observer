@@ -11,7 +11,7 @@ export default class ViewportObserver extends React.Component {
     rootMargin  : PropTypes.string,
     threshold   : PropTypes.arrayOf(PropTypes.number),
     triggerOnce : PropTypes.bool,
-    children    : PropTypes.node.isRequired
+    children    : PropTypes.node
   };
 
   static defaultProps = {
@@ -19,7 +19,8 @@ export default class ViewportObserver extends React.Component {
     onLeave     : () => {},
     rootMargin  : null,
     threshold   : [0],
-    triggerOnce : false
+    triggerOnce : false,
+    children    : null
   };
 
   intersectionObserver;
