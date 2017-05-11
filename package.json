@@ -2,9 +2,11 @@
   "name": "viewport-observer",
   "version": "0.1.0",
   "description": "A React Component that detect element existence on viewport using IntersectionObserver",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "eslint ."
+    "build": "rm -rf lib && NODE_ENV=development babel src --out-dir lib",
+    "prepublish": "npm run build",
+    "test": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,9 @@
   },
   "homepage": "https://github.com/openfresh/viewport-observer#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-preset-react-app": "^2.2.0",
     "eslint": "^3.19.0",
     "eslint-config-fresh": "^1.3.1",
     "eslint-config-fresh-react": "^1.2.0",
