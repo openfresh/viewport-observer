@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as autoBind from 'auto-bind';
 
 export default class ViewportObserver extends React.Component {
   static propTypes = {
@@ -25,6 +26,11 @@ export default class ViewportObserver extends React.Component {
   intersectionObserver;
 
   element;
+
+  constructor(props) {
+    super(props);
+    autoBind(this);
+  }
 
   setElement(node) {
     this.element = node;
