@@ -35,13 +35,14 @@ import ViewportObserver from 'viewport-observer';
 
 ## Config
 
-|  Property  |     |
-| ---------- | --- |
-| onEnter    | Call on enter to viewport  |
-| onLeave    | Call on leave from viewport |
-| root       |     |
-| rootMargin |     |
-| threshold  |     |
+|  Property   | Type       | Description                 |
+| ----------- | ---------- | --------------------------- |
+| onEnter | `Function` | Call on enter to viewport   |
+| onLeave | `Function` | Call on leave from viewport |
+| root | `Node` | |
+| rootMargin | `DOMString` | |
+| threshold  | `Array<Number>` | |
+| triggerOnce | `Boolean` | |
 
 ## License
 

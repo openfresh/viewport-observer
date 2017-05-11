@@ -5,22 +5,21 @@ import * as PropTypes from 'prop-types';
 
 export default class ViewportObserver extends React.Component {
   static propTypes = {
-    onEnter    : PropTypes.func,
-    onLeave    : PropTypes.func,
-    root       : PropTypes.node.isRequired,
-    rootMargin : PropTypes.string,
-    threshold  : PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.arrayOf(PropTypes.number)
-    ]),
-    children : PropTypes.node.isRequired
+    onEnter     : PropTypes.func,
+    onLeave     : PropTypes.func,
+    root        : PropTypes.node.isRequired,
+    rootMargin  : PropTypes.string,
+    threshold   : PropTypes.arrayOf(PropTypes.number),
+    triggerOnce : PropTypes.bool,
+    children    : PropTypes.node.isRequired
   };
 
   static defaultProps = {
-    onEnter    : () => {},
-    onLeave    : () => {},
-    rootMargin : null,
-    threshold  : [0]
+    onEnter     : () => {},
+    onLeave     : () => {},
+    rootMargin  : null,
+    threshold   : [0],
+    triggerOnce : false
   };
 
   intersectionObserver;
@@ -44,6 +43,11 @@ export default class ViewportObserver extends React.Component {
         return;
       }
 
+      if (this.props.triggerOnce) {
+        this.intersectionObserver.unobserve(this.element);
+        this.intersectionObserver = null;
+      }
+
       this.props.onEnter();
     }, { root, rootMargin, threshold });
 
@@ -59,7 +63,7 @@ export default class ViewportObserver extends React.Component {
 
   render() {
     return (
-      <div ref={this.setElement} className="Waypoint">
+      <div ref={this.setElement} className="ViewportObserver">
         {this.props.children}
       </div>
     );
