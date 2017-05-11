@@ -1,0 +1,8 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint-config-fresh",
+    "eslint-config-fresh-react",
+    "eslint-config-fresh-react/jsx-a11y"
+  ]
+}
