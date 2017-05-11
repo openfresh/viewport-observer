@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import * as autoBind from 'auto-bind';
+import autoBind from 'auto-bind';
 
 export default class ViewportObserver extends React.Component {
   static propTypes = {
