@@ -1,6 +1,6 @@
 {
   "name": "viewport-observer",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "A React Component that detect element existence on viewport using IntersectionObserver",
   "main": "lib/index.js",
   "scripts": {
