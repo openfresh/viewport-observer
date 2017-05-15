@@ -5,9 +5,11 @@ import * as PropTypes from 'prop-types';
 
 export default class ViewportObserver extends React.Component {
   static propTypes = {
+    tag         : PropTypes.node,
+    className   : PropTypes.string,
     onEnter     : PropTypes.func,
     onLeave     : PropTypes.func,
-    root        : PropTypes.node.isRequired,
+    root        : PropTypes.node,
     rootMargin  : PropTypes.string,
     threshold   : PropTypes.arrayOf(PropTypes.number),
     triggerOnce : PropTypes.bool,
@@ -15,8 +17,11 @@ export default class ViewportObserver extends React.Component {
   };
 
   static defaultProps = {
+    tag         : 'div',
+    className   : '',
     onEnter     : () => {},
     onLeave     : () => {},
+    root        : null,
     rootMargin  : null,
     threshold   : [0],
     triggerOnce : false,
@@ -69,10 +74,12 @@ export default class ViewportObserver extends React.Component {
   }
 
   render() {
+    const { tag, className } = this.props;
+
     return (
-      <div ref={this.setElement} className="ViewportObserver">
+      <tag ref={this.setElement} className={className}>
         {this.props.children}
-      </div>
+      </tag>
     );
   }
 }

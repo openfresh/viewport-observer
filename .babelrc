@@ -1,6 +1,6 @@
 {
   "presets": [
-    "react",
+    "react-app",
     "es2015"
   ],
   "plugins": [
