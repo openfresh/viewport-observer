@@ -6,6 +6,7 @@ import * as PropTypes from 'prop-types';
 export default class ViewportObserver extends React.Component {
   static propTypes = {
     className   : PropTypes.string,
+    onChange    : PropTypes.func,
     onEnter     : PropTypes.func,
     onLeave     : PropTypes.func,
     root        : PropTypes.node,
@@ -17,6 +18,7 @@ export default class ViewportObserver extends React.Component {
 
   static defaultProps = {
     className   : '',
+    onChange    : () => {},
     onEnter     : () => {},
     onLeave     : () => {},
     root        : null,
@@ -26,13 +28,12 @@ export default class ViewportObserver extends React.Component {
     children    : null
   };
 
-  intersectionObserver;
-
-  element;
-
   constructor(props) {
     super(props);
 
+    this.isIntersected = false;
+    this.observer = null;
+    this.element = null;
     this.setElement = this.setElement.bind(this);
   }
 
@@ -43,31 +44,42 @@ export default class ViewportObserver extends React.Component {
   componentDidMount() {
     const { root, rootMargin, threshold } = this.props;
 
-    this.intersectionObserver = new IntersectionObserver(entries => {
+    this.observer = new IntersectionObserver(entries => {
       if (entries.length === 0) {
         return;
       }
 
-      if (entries[0].intersectionRatio <= 0) {
-        this.props.onLeave();
-        return;
-      }
+      const entry = entries[0];
 
-      if (this.props.triggerOnce) {
-        this.intersectionObserver.unobserve(this.element);
-        this.intersectionObserver = null;
-      }
+      if (this.isIntersected) {
+        this.props.onChange(entry);
 
-      this.props.onEnter();
+        if (entry.intersectionRatio <= 0) {
+          this.isIntersected = false;
+          this.props.onLeave();
+        }
+      } else {
+        if (entry.intersectionRatio > 0) {
+          this.isIntersected = true;
+          this.props.onEnter();
+
+          if (this.props.triggerOnce) {
+            this.observer.unobserve(this.element);
+            this.observer = null;
+          }
+        }
+
+        this.props.onChange(entry);
+      }
     }, { root, rootMargin, threshold });
 
-    this.intersectionObserver.observe(this.element);
+    this.observer.observe(this.element);
   }
 
   componentWillUnmount() {
-    if (this.intersectionObserver) {
-      this.intersectionObserver.unobserve(this.element);
-      this.intersectionObserver = null;
+    if (this.observer) {
+      this.observer.unobserve(this.element);
+      this.observer = null;
     }
   }
 

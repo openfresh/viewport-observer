@@ -22,11 +22,13 @@ import ViewportObserver from 'viewport-observer';
 ...
 
 <ViewportObserver
+  onChange={() => console.log('onChange')}
   onEnter={() => console.log('onEnter')}
   onLeave={() => console.log('onLeave')}
 />
 
 <ViewportObserver
+  onChange={() => console.log('onChange')}
   onEnter={() => console.log('onEnter')}
   onLeave={() => console.log('onLeave')}>
   <div>{/* ... */}</div>
@@ -38,6 +40,7 @@ import ViewportObserver from 'viewport-observer';
 |  Property   | Type       | Default Value |
 | ----------- | ---------- | ------------- |
 | className | `String` | `ViewportObserver` |
+| onChange | `Function` | `() => {}` |
 | onEnter | `Function` | `() => {}` |
 | onLeave | `Function` | `() => {}` |
 | [root](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserver-root) | `Node` | `null` |
