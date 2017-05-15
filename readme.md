@@ -37,7 +37,6 @@ import ViewportObserver from 'viewport-observer';
 
 |  Property   | Type       | Description                 |
 | ----------- | ---------- | --------------------------- |
-| tag | `String` | Default value is `div` |
 | className | `String` | Default value is `ViewportObserver` |
 | onEnter | `Function` | Call on enter to viewport   |
 | onLeave | `Function` | Call on leave from viewport |
