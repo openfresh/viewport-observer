@@ -4,7 +4,7 @@
 [![devDependency Status](https://david-dm.org/openfresh/viewport-observer/dev-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=dev)
 [![peerDependency Status](https://david-dm.org/openfresh/viewport-observer/peer-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=peer)
 
-> A React Component that detect element existence on viewport using [`IntersectionObserver`](https://wicg.github.io/IntersectionObserver/)
+> A React Component that observe changes in the intersection of a target element with viewport using [`IntersectionObserver`](https://wicg.github.io/IntersectionObserver/)
 
 ## Install
 
@@ -12,7 +12,7 @@
 $ npm install --save viewport-observer
 ```
 
-This package depends on [`IntersectionObserver`](https://wicg.github.io/IntersectionObserver/), You probably need to polyfill via [WICG/IntersectionObserver Polyfill](https://github.com/WICG/IntersectionObserver/tree/gh-pages/polyfill).
+This package depends on `IntersectionObserver`, so you probably need to polyfill via [WICG/IntersectionObserver Polyfill](https://github.com/WICG/IntersectionObserver/tree/gh-pages/polyfill) before using this package.
 
 ## Usage
 
@@ -35,15 +35,15 @@ import ViewportObserver from 'viewport-observer';
 
 ## Config
 
-|  Property   | Type       | Description                 |
-| ----------- | ---------- | --------------------------- |
-| className | `String` | Default value is `ViewportObserver` |
-| onEnter | `Function` | Call on enter to viewport   |
-| onLeave | `Function` | Call on leave from viewport |
-| root | `Node` | |
-| rootMargin | `DOMString` | |
-| threshold  | `Array<Number>` | |
-| triggerOnce | `Boolean` | |
+|  Property   | Type       | Default Value |
+| ----------- | ---------- | ------------- |
+| className | `String` | `ViewportObserver` |
+| onEnter | `Function` | `() => {}` |
+| onLeave | `Function` | `() => {}` |
+| [root](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserver-root) | `Node` | `null` |
+| [rootMargin](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-rootmargin) | [`DOMString`](https://heycam.github.io/webidl/#idl-DOMString) | `0px` |
+| [threshold](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-threshold)  | `Array<Number>` | `[0]` |
+| triggerOnce | `Boolean` | `false` |
 
 ## License
 
