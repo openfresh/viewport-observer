@@ -1,7 +1,7 @@
 {
   "name": "viewport-observer",
   "version": "0.6.0",
-  "description": "A React Component that detect element existence on viewport using IntersectionObserver",
+  "description": "A React Component that observe changes in the intersection of a target element with viewport using IntersectionObserver",
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib && NODE_ENV=development babel src --out-dir lib",
@@ -13,7 +13,9 @@
     "url": "git+https://github.com/openfresh/viewport-observer.git"
   },
   "keywords": [
-    "react"
+    "react",
+    "viewport",
+    "intersection"
   ],
   "author": "openfresh",
   "license": "MIT",
@@ -25,8 +27,8 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react-app": "^2.2.0",
     "eslint": "^3.19.0",
     "eslint-config-fresh": "^1.3.1",
     "eslint-config-fresh-react": "^1.2.0",
@@ -36,7 +38,7 @@
     "eslint-plugin-react": "^7.0.0"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.9",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4"
   }
 }

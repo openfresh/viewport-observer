@@ -1,9 +1,9 @@
 {
   "presets": [
-    "react-app",
     "es2015"
   ],
   "plugins": [
-    "transform-class-properties"
+    "transform-class-properties",
+    "transform-object-rest-spread"
   ]
 }

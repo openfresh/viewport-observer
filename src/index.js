@@ -5,7 +5,7 @@ import * as PropTypes from 'prop-types';
 
 export default class ViewportObserver extends React.Component {
   static propTypes = {
-    className   : PropTypes.string,
+    tagName     : PropTypes.string,
     onChange    : PropTypes.func,
     onEnter     : PropTypes.func,
     onLeave     : PropTypes.func,
@@ -17,7 +17,7 @@ export default class ViewportObserver extends React.Component {
   };
 
   static defaultProps = {
-    className   : '',
+    tagName     : 'div',
     onChange    : () => {},
     onEnter     : () => {},
     onLeave     : () => {},
@@ -84,10 +84,9 @@ export default class ViewportObserver extends React.Component {
   }
 
   render() {
-    return (
-      <div ref={this.setElement} className={this.props.className}>
-        {this.props.children}
-      </div>
-    );
+    return React.createElement(this.props.tagName, {
+      ...this.props,
+      ref : this.setElement
+    }, this.props.children);
   }
 }

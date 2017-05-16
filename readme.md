@@ -39,7 +39,7 @@ import ViewportObserver from 'viewport-observer';
 
 |  Property   | Type       | Default Value |
 | ----------- | ---------- | ------------- |
-| className | `String` | `ViewportObserver` |
+| tagName | `String` | `div` |
 | onChange | `Function` | `() => {}` |
 | onEnter | `Function` | `() => {}` |
 | onLeave | `Function` | `() => {}` |
