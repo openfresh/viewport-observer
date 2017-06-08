@@ -1,4 +1,4 @@
-# `ViewportObserver`
+# ViewportObserver
 
 [![Build Status](https://travis-ci.org/openfresh/viewport-observer.svg?branch=master)](https://travis-ci.org/openfresh/viewport-observer)
 [![devDependency Status](https://david-dm.org/openfresh/viewport-observer/dev-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=dev)
@@ -17,6 +17,8 @@ This package depends on `IntersectionObserver`, so you probably need to polyfill
 ## Usage
 
 ```jsx
+// you probably need to polyfill
+import 'intersection-observer';
 import ViewportObserver from 'viewport-observer';
 
 ...
