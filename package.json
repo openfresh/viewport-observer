@@ -8,10 +8,7 @@
     "prepublish": "npm run build",
     "test": "eslint src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/openfresh/viewport-observer.git"
-  },
+  "repository": "openfresh/viewport-observer",
   "keywords": [
     "react",
     "viewport",
