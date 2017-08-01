@@ -41,6 +41,13 @@ export default class ViewportObserver extends React.Component {
     this.element = node;
   }
 
+  dispose() {
+    if (this.observer) {
+      this.observer.unobserve(this.element);
+      this.observer = null;
+    }
+  }
+
   componentDidMount() {
     this.observer = new IntersectionObserver(entries => {
       if (entries.length === 0) {
@@ -64,8 +71,7 @@ export default class ViewportObserver extends React.Component {
       this.isIntersected = next;
 
       if (this.props.triggerOnce) {
-        this.observer.unobserve(this.element);
-        this.observer = null;
+        this.dispose();
       }
     }, {
       root       : this.props.root,
@@ -77,10 +83,7 @@ export default class ViewportObserver extends React.Component {
   }
 
   componentWillUnmount() {
-    if (this.observer) {
-      this.observer.unobserve(this.element);
-      this.observer = null;
-    }
+    this.dispose();
   }
 
   render() {
