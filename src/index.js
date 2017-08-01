@@ -37,8 +37,8 @@ export default class ViewportObserver extends React.Component {
     this.setElement = this.setElement.bind(this);
   }
 
-  setElement(node) {
-    this.element = node;
+  setElement(element) {
+    this.element = element;
   }
 
   dispose() {
