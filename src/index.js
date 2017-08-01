@@ -42,36 +42,36 @@ export default class ViewportObserver extends React.Component {
   }
 
   componentDidMount() {
-    const { root, rootMargin, threshold } = this.props;
-
     this.observer = new IntersectionObserver(entries => {
       if (entries.length === 0) {
         return;
       }
 
       const entry = entries[0];
+      const ratio = entry.intersectionRatio;
+      const next = ratio > 0;
 
-      if (this.isIntersected) {
-        this.props.onChange(entry);
-
-        if (entry.intersectionRatio <= 0) {
-          this.isIntersected = false;
-          this.props.onLeave();
-        }
-      } else {
-        if (entry.intersectionRatio > 0) {
-          this.isIntersected = true;
-          this.props.onEnter();
-
-          if (this.props.triggerOnce) {
-            this.observer.unobserve(this.element);
-            this.observer = null;
-          }
-        }
-
-        this.props.onChange(entry);
+      if (!this.isIntersected && ratio > 0) {
+        this.props.onEnter();
       }
-    }, { root, rootMargin, threshold });
+
+      this.props.onChange(entry);
+
+      if (this.isIntersected && ratio <= 0) {
+        this.props.onLeave();
+      }
+
+      this.isIntersected = next;
+
+      if (this.props.triggerOnce) {
+        this.observer.unobserve(this.element);
+        this.observer = null;
+      }
+    }, {
+      root       : this.props.root,
+      rootMargin : this.props.rootMargin,
+      threshold  : this.props.threshold
+    });
 
     this.observer.observe(this.element);
   }
