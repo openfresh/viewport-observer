@@ -3,7 +3,7 @@
 import * as assert from 'power-assert';
 import * as React from 'react';
 import * as TestUtils from 'react-addons-test-utils';
-import ViewportObserver from '.';
+import ViewportObserver from '../src';
 
 describe('ViewportObserver', () => {
   it('should be rendered as div default', () => {

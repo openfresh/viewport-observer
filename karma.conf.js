@@ -7,7 +7,7 @@ module.exports = function(config) {
       'mocha'
     ],
     files : [
-      'src/**/*.test.js'
+      'test/*.js'
     ],
     plugins : [
       'karma-browserify',
@@ -15,7 +15,7 @@ module.exports = function(config) {
       'karma-chrome-launcher'
     ],
     preprocessors : {
-      'src/**/*.test.js' : 'browserify'
+      'test/*.js' : 'browserify'
     },
     browserify : {
       transform : ['babelify']
