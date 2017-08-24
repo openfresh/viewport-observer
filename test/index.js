@@ -8,6 +8,16 @@ import sinon from 'sinon';
 import ViewportObserver from '../src';
 
 describe('ViewportObserver', () => {
+  const div = document.createElement('div');
+
+  beforeEach(() => {
+    document.body.appendChild(div);
+  });
+
+  afterEach(() => {
+    document.body.removeChild(div);
+  });
+
   it('should be rendered as div default', () => {
     const component = TestUtils.renderIntoDocument(<ViewportObserver />);
     const node = TestUtils.findRenderedDOMComponentWithTag(component, 'div');
@@ -44,15 +54,10 @@ describe('ViewportObserver', () => {
       onLeave  : spiedOnLeave
     };
 
-    document.body.style.height = '1000px';
-
-    const div = document.createElement('div');
-
-    document.body.appendChild(div);
-
     const component = ReactDOM.render(<ViewportObserver {...props} />, div);
     const node = TestUtils.findRenderedDOMComponentWithTag(component, 'div');
 
+    document.body.style.height = '1000px';
     node.style.marginTop = '10px';
     node.style.height = '100px';
 
