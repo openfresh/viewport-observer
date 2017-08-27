@@ -7,15 +7,22 @@ module.exports = function(config) {
       'mocha'
     ],
     files : [
+      'src/*.js',
       'test/*.js'
     ],
+    reporters: [
+      'progress', 
+      'coverage'
+    ],
     plugins : [
+      'karma-coverage',
       'karma-browserify',
       'karma-mocha',
       'karma-chrome-launcher'
     ],
     preprocessors : {
-      'test/*.js' : 'browserify'
+      'src/*.js': ['browserify', 'coverage'],
+      'test/*.js' : ['browserify']
     },
     browserify : {
       transform : ['babelify']
