@@ -1,5 +1,9 @@
 'use strict';
 
+const fs = require('fs');
+const babelConfig = JSON.parse(fs.readFileSync('./.babelrc'));
+babelConfig.plugins.push('istanbul');
+
 module.exports = function(config) {
   config.set({
     frameworks : [
@@ -21,7 +25,9 @@ module.exports = function(config) {
       'test/*.js' : ['browserify']
     },
     browserify : {
-      transform : ['babelify']
+      transform : [
+        ['babelify', babelConfig]
+      ]
     },
     browsers  : ['Chrome'],
     autoWatch : false,
