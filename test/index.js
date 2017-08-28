@@ -22,21 +22,21 @@ describe('ViewportObserver', () => {
     const component = TestUtils.renderIntoDocument(<ViewportObserver />);
     const node = TestUtils.findRenderedDOMComponentWithTag(component, 'div');
 
-    assert(node !== null);
+    assert.notEqual(node, null);
   });
 
   it('should be rendered as specified `tagName`', () => {
     const component = TestUtils.renderIntoDocument(<ViewportObserver tagName="span" />);
     const node = TestUtils.findRenderedDOMComponentWithTag(component, 'span');
 
-    assert(node !== null);
+    assert.notEqual(node, null);
   });
 
   it('should have expected `className`', () => {
     const component = TestUtils.renderIntoDocument(<ViewportObserver className="a" />);
     const node = TestUtils.findRenderedDOMComponentWithTag(component, 'div');
 
-    assert(node.className === 'a');
+    assert.equal(node.className, 'a');
   });
 
   it('should fire `onEnter` -> `onChange` -> `onLeave`', done => {
