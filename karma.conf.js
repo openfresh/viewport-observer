@@ -7,22 +7,33 @@ module.exports = function(config) {
       'mocha'
     ],
     files : [
+      'src/*.js',
       'test/*.js'
     ],
     plugins : [
+      'karma-coverage',
       'karma-browserify',
       'karma-mocha',
       'karma-chrome-launcher'
     ],
     preprocessors : {
-      'test/*.js' : 'browserify'
+      'src/*.js'  : ['browserify', 'coverage'],
+      'test/*.js' : ['browserify']
     },
     browserify : {
       transform : ['babelify']
     },
     browsers  : ['Chrome'],
     autoWatch : false,
-    reporters : ['dots'],
-    logLevel  : config.LOG_DEBUG
+    reporters : [
+      'dots',
+      'coverage'
+    ],
+    coverageReporter : {
+      reporters : [
+        { type : 'lcovonly' }
+      ]
+    },
+    logLevel : config.LOG_DEBUG
   });
 };
