@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/openfresh/viewport-observer.svg?branch=master)](https://travis-ci.org/openfresh/viewport-observer)
 [![devDependency Status](https://david-dm.org/openfresh/viewport-observer/dev-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=dev)
 [![peerDependency Status](https://david-dm.org/openfresh/viewport-observer/peer-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=peer)
+[![codecov](https://codecov.io/gh/openfresh/viewport-observer/branch/master/graph/badge.svg)](https://codecov.io/gh/openfresh/viewport-observer)
 
 > A React Component that observe changes in the intersection of a target element with viewport using [`IntersectionObserver`](https://wicg.github.io/IntersectionObserver/)
 

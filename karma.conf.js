@@ -10,10 +10,6 @@ module.exports = function(config) {
       'src/*.js',
       'test/*.js'
     ],
-    reporters: [
-      'progress', 
-      'coverage'
-    ],
     plugins : [
       'karma-coverage',
       'karma-browserify',
@@ -21,7 +17,7 @@ module.exports = function(config) {
       'karma-chrome-launcher'
     ],
     preprocessors : {
-      'src/*.js': ['browserify', 'coverage'],
+      'src/*.js'  : ['browserify', 'coverage'],
       'test/*.js' : ['browserify']
     },
     browserify : {
@@ -29,7 +25,15 @@ module.exports = function(config) {
     },
     browsers  : ['Chrome'],
     autoWatch : false,
-    reporters : ['dots'],
-    logLevel  : config.LOG_DEBUG
+    reporters : [
+      'dots',
+      'coverage'
+    ],
+    coverageReporter : {
+      reporters : [
+        { type : 'lcovonly' }
+      ]
+    },
+    logLevel : config.LOG_DEBUG
   });
 };

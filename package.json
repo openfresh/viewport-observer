@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm -rf lib && NODE_ENV=development babel src --out-dir lib",
     "prepublish": "npm run build",
-    "test": "eslint src && karma start karma.conf.js --single-run"
+    "test": "eslint src && karma start karma.conf.js --single-run",
+    "codecov": "codecov"
   },
   "repository": "openfresh/viewport-observer",
   "keywords": [
@@ -29,6 +30,7 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "codecov": "^2.3.0",
     "eslint": "^4.3.0",
     "eslint-config-fresh": "^2.1.0",
     "eslint-config-fresh-react": "^2.2.0",
