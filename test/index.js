@@ -122,7 +122,7 @@ describe('ViewportObserver', () => {
 
     setTimeout(() => {
       assert(spiedOnEnter.called);
-      assert(!spiedOnChange.called);
+      assert(spiedOnChange.called);
       assert(!spiedOnLeave.called);
     }, 20);
 
@@ -131,8 +131,8 @@ describe('ViewportObserver', () => {
     }, 30);
 
     setTimeout(() => {
-      assert(spiedOnEnter.called);
-      assert(!spiedOnChange.called);
+      assert(spiedOnEnter.calledOnce);
+      assert(spiedOnChange.calledOnce);
       assert(!spiedOnLeave.called);
     }, 40);
 
@@ -141,8 +141,8 @@ describe('ViewportObserver', () => {
     }, 50);
 
     setTimeout(() => {
-      assert(spiedOnEnter.called);
-      assert(!spiedOnChange.called);
+      assert(spiedOnEnter.calledOnce);
+      assert(spiedOnChange.calledOnce);
       assert(!spiedOnLeave.called);
       done();
     }, 60);
