@@ -15,6 +15,7 @@ describe('ViewportObserver', () => {
   });
 
   afterEach(() => {
+    ReactDOM.unmountComponentAtNode(div);
     document.body.removeChild(div);
   });
 
@@ -93,7 +94,7 @@ describe('ViewportObserver', () => {
     }, 60);
   });
 
-  it('should fire only `onEnter` once with triggerOnce property', done => {
+  it('should fire only `onChange` once with triggerOnce property', done => {
     const onEnter = () => {};
     const onChange = () => {};
     const onLeave = () => {};
@@ -121,7 +122,7 @@ describe('ViewportObserver', () => {
     }, 10);
 
     setTimeout(() => {
-      assert(spiedOnEnter.called);
+      assert(!spiedOnEnter.called);
       assert(spiedOnChange.called);
       assert(!spiedOnLeave.called);
     }, 20);
@@ -131,7 +132,7 @@ describe('ViewportObserver', () => {
     }, 30);
 
     setTimeout(() => {
-      assert(spiedOnEnter.calledOnce);
+      assert(!spiedOnEnter.called);
       assert(spiedOnChange.calledOnce);
       assert(!spiedOnLeave.called);
     }, 40);
@@ -141,10 +142,21 @@ describe('ViewportObserver', () => {
     }, 50);
 
     setTimeout(() => {
-      assert(spiedOnEnter.calledOnce);
+      assert(!spiedOnEnter.called);
       assert(spiedOnChange.calledOnce);
       assert(!spiedOnLeave.called);
       done();
     }, 60);
+  });
+
+  it('should be disposed after unmount', () => {
+    const component = ReactDOM.render(<ViewportObserver tagName="span" />, div);
+    const node = TestUtils.findRenderedDOMComponentWithTag(component, 'span');
+
+    assert.notEqual(component.observer, null);
+
+    ReactDOM.unmountComponentAtNode(div);
+
+    assert.equal(component.observer, null);
   });
 });
