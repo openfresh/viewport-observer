@@ -144,7 +144,19 @@ describe('ViewportObserver', () => {
       assert(spiedOnEnter.calledOnce);
       assert(spiedOnChange.calledOnce);
       assert(!spiedOnLeave.called);
+      ReactDOM.unmountComponentAtNode(div);
       done();
     }, 60);
+  });
+
+  it('should be disposed after unmount', () => {
+    const component = ReactDOM.render(<ViewportObserver tagName="span" />, div);
+    const node = TestUtils.findRenderedDOMComponentWithTag(component, 'span');
+
+    assert.notEqual(component.observer, null);
+
+    ReactDOM.unmountComponentAtNode(div);
+
+    assert.equal(component.observer, null);
   });
 });
