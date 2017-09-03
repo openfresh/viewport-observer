@@ -44,6 +44,7 @@ export default class ViewportObserver extends React.Component {
   dispose() {
     if (this.observer) {
       this.observer.unobserve(this.element);
+      this.observer.disconnect();
       this.observer = null;
     }
   }
