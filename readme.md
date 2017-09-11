@@ -5,7 +5,7 @@
 [![peerDependency Status](https://david-dm.org/openfresh/viewport-observer/peer-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=peer)
 [![codecov](https://codecov.io/gh/openfresh/viewport-observer/branch/master/graph/badge.svg)](https://codecov.io/gh/openfresh/viewport-observer)
 
-> A React Component that observe changes in the intersection of a target element with viewport using [`IntersectionObserver`](https://wicg.github.io/IntersectionObserver/)
+> React Component that observe changes in the intersection of a target element with viewport using [`IntersectionObserver`](https://wicg.github.io/IntersectionObserver/)
 
 ## Install
 
@@ -27,12 +27,6 @@ import ViewportObserver from 'viewport-observer';
 <ViewportObserver
   onChange={() => console.log('onChange')}
   onEnter={() => console.log('onEnter')}
-  onLeave={() => console.log('onLeave')}
-/>
-
-<ViewportObserver
-  onChange={() => console.log('onChange')}
-  onEnter={() => console.log('onEnter')}
   onLeave={() => console.log('onLeave')}>
   <div>{/* ... */}</div>
 </ViewportObserver>
@@ -50,6 +44,10 @@ import ViewportObserver from 'viewport-observer';
 | [rootMargin](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-rootmargin) | [`DOMString`](https://heycam.github.io/webidl/#idl-DOMString) | `0px` |
 | [threshold](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-threshold)  | `Array<Number>` | `[0]` |
 | triggerOnce | `Boolean` | `false` |
+
+## Related
+
+- [openfresh/super-image](https://github.com/openfresh/super-image): React component that render a image with object-fit and its fallback
 
 ## License
 
