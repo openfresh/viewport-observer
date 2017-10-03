@@ -3,6 +3,19 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
+const UNKNOWN_PROPS = [
+  'tagName',
+  'onChange',
+  'onEnter',
+  'onLeave',
+  'root',
+  'rootMargin',
+  'threshold',
+  'rootMargin',
+  'triggerOnce',
+  'children'
+];
+
 export default class ViewportObserver extends React.Component {
   static propTypes = {
     tagName     : PropTypes.string,
@@ -88,8 +101,16 @@ export default class ViewportObserver extends React.Component {
   }
 
   render() {
+    const props = {};
+
+    Object.keys(this.props)
+      .filter(key => UNKNOWN_PROPS.indexOf(key) === -1)
+      .forEach(key => {
+        props[key] = this.props[key];
+      });
+
     return React.createElement(this.props.tagName, {
-      ...this.props,
+      ...props,
       ref : this.setElement
     }, this.props.children);
   }
