@@ -1,6 +1,6 @@
 {
   "name": "viewport-observer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React Component that observe changes in the intersection of a target element with viewport using IntersectionObserver",
   "main": "lib/index.js",
   "scripts": {
