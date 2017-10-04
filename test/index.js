@@ -64,34 +64,34 @@ describe('ViewportObserver', () => {
 
     setTimeout(() => {
       window.scrollTo(0, 10);
-    }, 10);
+    }, 100);
 
     setTimeout(() => {
       assert(spiedOnEnter.called);
       assert(spiedOnChange.called);
       assert(!spiedOnLeave.called);
-    }, 20);
+    }, 200);
 
     setTimeout(() => {
       window.scrollTo(0, 110);
-    }, 30);
+    }, 300);
 
     setTimeout(() => {
       assert(spiedOnEnter.called);
       assert(spiedOnChange.called);
       assert(!spiedOnLeave.called);
-    }, 40);
+    }, 400);
 
     setTimeout(() => {
       window.scrollTo(0, 111);
-    }, 50);
+    }, 500);
 
     setTimeout(() => {
       assert(spiedOnEnter.called);
       assert(spiedOnChange.called);
       assert(spiedOnLeave.called);
       done();
-    }, 60);
+    }, 600);
   });
 
   it('should fire only `onChange` once with triggerOnce property', done => {
@@ -119,39 +119,38 @@ describe('ViewportObserver', () => {
 
     setTimeout(() => {
       window.scrollTo(0, 10);
-    }, 10);
+    }, 100);
 
     setTimeout(() => {
       assert(!spiedOnEnter.called);
       assert(spiedOnChange.called);
       assert(!spiedOnLeave.called);
-    }, 20);
+    }, 200);
 
     setTimeout(() => {
       window.scrollTo(0, 110);
-    }, 30);
+    }, 300);
 
     setTimeout(() => {
       assert(!spiedOnEnter.called);
       assert(spiedOnChange.calledOnce);
       assert(!spiedOnLeave.called);
-    }, 40);
+    }, 400);
 
     setTimeout(() => {
       window.scrollTo(0, 111);
-    }, 50);
+    }, 500);
 
     setTimeout(() => {
       assert(!spiedOnEnter.called);
       assert(spiedOnChange.calledOnce);
       assert(!spiedOnLeave.called);
       done();
-    }, 60);
+    }, 600);
   });
 
   it('should be disposed after unmount', () => {
     const component = ReactDOM.render(<ViewportObserver tagName="span" />, div);
-    const node = TestUtils.findRenderedDOMComponentWithTag(component, 'span');
 
     assert.notEqual(component.observer, null);
 
