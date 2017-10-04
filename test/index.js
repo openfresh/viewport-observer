@@ -151,7 +151,6 @@ describe('ViewportObserver', () => {
 
   it('should be disposed after unmount', () => {
     const component = ReactDOM.render(<ViewportObserver tagName="span" />, div);
-    const node = TestUtils.findRenderedDOMComponentWithTag(component, 'span');
 
     assert.notEqual(component.observer, null);
 
