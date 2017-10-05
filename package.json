@@ -48,12 +48,12 @@
     "mocha": "^4.0.0",
     "power-assert": "^1.4.4",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "sinon": "^4.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.5.4"
+    "react": "^16.0.0"
   }
 }
