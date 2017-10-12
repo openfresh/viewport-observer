@@ -94,61 +94,6 @@ describe('ViewportObserver', () => {
     }, 600);
   });
 
-  it('should fire only `onChange` once with triggerOnce property', done => {
-    const onEnter = () => {};
-    const onChange = () => {};
-    const onLeave = () => {};
-
-    const spiedOnEnter = sinon.spy(onEnter);
-    const spiedOnChange = sinon.spy(onChange);
-    const spiedOnLeave = sinon.spy(onLeave);
-
-    const props = {
-      onEnter     : spiedOnEnter,
-      onChange    : spiedOnChange,
-      onLeave     : spiedOnLeave,
-      triggerOnce : true
-    };
-
-    const component = ReactDOM.render(<ViewportObserver {...props} />, div);
-    const node = TestUtils.findRenderedDOMComponentWithTag(component, 'div');
-
-    document.body.style.height = '1000px';
-    node.style.marginTop = '10px';
-    node.style.height = '100px';
-
-    setTimeout(() => {
-      window.scrollTo(0, 10);
-    }, 100);
-
-    setTimeout(() => {
-      assert(!spiedOnEnter.called);
-      assert(spiedOnChange.called);
-      assert(!spiedOnLeave.called);
-    }, 200);
-
-    setTimeout(() => {
-      window.scrollTo(0, 110);
-    }, 300);
-
-    setTimeout(() => {
-      assert(!spiedOnEnter.called);
-      assert(spiedOnChange.calledOnce);
-      assert(!spiedOnLeave.called);
-    }, 400);
-
-    setTimeout(() => {
-      window.scrollTo(0, 111);
-    }, 500);
-
-    setTimeout(() => {
-      assert(!spiedOnEnter.called);
-      assert(spiedOnChange.calledOnce);
-      assert(!spiedOnLeave.called);
-      done();
-    }, 600);
-  });
-
   it('should be disposed after unmount', () => {
     const component = ReactDOM.render(<ViewportObserver tagName="span" />, div);
 
