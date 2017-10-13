@@ -32,6 +32,8 @@ import ViewportObserver from 'viewport-observer';
 </ViewportObserver>
 ```
 
+You can call `dispose()` of ViewportObserver instance to stop observing and dispose `IntersectionObserver` instance.
+
 ## Config
 
 |  Property   | Type       | Default Value |
@@ -43,7 +45,6 @@ import ViewportObserver from 'viewport-observer';
 | [root](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserver-root) | `Node` | `null` |
 | [rootMargin](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-rootmargin) | [`DOMString`](https://heycam.github.io/webidl/#idl-DOMString) | `0px` |
 | [threshold](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-threshold)  | `Array<Number>` | `[0]` |
-| triggerOnce | `Boolean` | `false` |
 
 ## Related
 

@@ -12,33 +12,30 @@ const UNKNOWN_PROPS = [
   'rootMargin',
   'threshold',
   'rootMargin',
-  'triggerOnce',
   'children'
 ];
 
 export default class ViewportObserver extends React.Component {
   static propTypes = {
-    tagName     : PropTypes.string,
-    onChange    : PropTypes.func,
-    onEnter     : PropTypes.func,
-    onLeave     : PropTypes.func,
-    root        : PropTypes.node,
-    rootMargin  : PropTypes.string,
-    threshold   : PropTypes.arrayOf(PropTypes.number),
-    triggerOnce : PropTypes.bool,
-    children    : PropTypes.node
+    tagName    : PropTypes.string,
+    onChange   : PropTypes.func,
+    onEnter    : PropTypes.func,
+    onLeave    : PropTypes.func,
+    root       : PropTypes.node,
+    rootMargin : PropTypes.string,
+    threshold  : PropTypes.arrayOf(PropTypes.number),
+    children   : PropTypes.node
   };
 
   static defaultProps = {
-    tagName     : 'div',
-    onChange    : () => {},
-    onEnter     : () => {},
-    onLeave     : () => {},
-    root        : null,
-    rootMargin  : '0px',
-    threshold   : [0],
-    triggerOnce : false,
-    children    : null
+    tagName    : 'div',
+    onChange   : () => {},
+    onEnter    : () => {},
+    onLeave    : () => {},
+    root       : null,
+    rootMargin : '0px',
+    threshold  : [0],
+    children   : null
   };
 
   constructor(props) {
@@ -83,10 +80,6 @@ export default class ViewportObserver extends React.Component {
       }
 
       this.isIntersected = next;
-
-      if (this.props.triggerOnce) {
-        this.dispose();
-      }
     }, {
       root       : this.props.root,
       rootMargin : this.props.rootMargin,
