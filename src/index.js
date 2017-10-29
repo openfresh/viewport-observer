@@ -38,15 +38,6 @@ export default class ViewportObserver extends React.Component {
     children   : null
   };
 
-  constructor(props) {
-    super(props);
-
-    this.isIntersected = false;
-    this.observer = null;
-    this.element = null;
-    this.setElement = this.setElement.bind(this);
-  }
-
   setElement(element) {
     this.element = element;
   }
@@ -57,6 +48,15 @@ export default class ViewportObserver extends React.Component {
       this.observer.disconnect();
       this.observer = null;
     }
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.isIntersected = false;
+    this.observer = null;
+    this.element = null;
+    this.setElement = this.setElement.bind(this);
   }
 
   componentDidMount() {
