@@ -21,6 +21,7 @@
     "url": "https://github.com/openfresh/viewport-observer/issues"
   },
   "homepage": "https://github.com/openfresh/viewport-observer#readme",
+  "typings": "type/index.d.ts",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^8.0.1",
