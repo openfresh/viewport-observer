@@ -20,4 +20,4 @@ declare class ViewportObserver extends React.Component<ViewportObserver.Props> {
   isIntersected: boolean;
 }
 
-export = ViewportObserver;
+export default ViewportObserver;
