@@ -13,7 +13,7 @@
 $ npm install --save viewport-observer
 ```
 
-This package depends on `IntersectionObserver`, so you probably need to polyfill via [WICG/IntersectionObserver Polyfill](https://github.com/WICG/IntersectionObserver/tree/gh-pages/polyfill) before using this package.
+This package depends on `IntersectionObserver`, so you probably need to polyfill via [w3c/IntersectionObserver Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) before using this package.
 
 ## Usage
 
