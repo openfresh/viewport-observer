@@ -5,7 +5,7 @@
 [![peerDependency Status](https://david-dm.org/openfresh/viewport-observer/peer-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=peer)
 [![codecov](https://codecov.io/gh/openfresh/viewport-observer/branch/master/graph/badge.svg)](https://codecov.io/gh/openfresh/viewport-observer)
 
-> React Component that observe changes in the intersection of a target element with viewport using [`IntersectionObserver`](https://wicg.github.io/IntersectionObserver/)
+> React Component that observe changes in the intersection of a target element with viewport using [`IntersectionObserver`](https://w3c.github.io/IntersectionObserver/)
 
 ## Install
 
@@ -13,7 +13,7 @@
 $ npm install --save viewport-observer
 ```
 
-This package depends on `IntersectionObserver`, so you probably need to polyfill via [WICG/IntersectionObserver Polyfill](https://github.com/WICG/IntersectionObserver/tree/gh-pages/polyfill) before using this package.
+This package depends on `IntersectionObserver`, so you probably need to polyfill via [w3c/IntersectionObserver Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) before using this package.
 
 ## Usage
 
