@@ -40,6 +40,13 @@ describe('ViewportObserver', () => {
     assert.equal(node.className, 'a');
   });
 
+  it('should have expected CSS `display` property', () => {
+    const component = TestUtils.renderIntoDocument(<ViewportObserver display="inline-flex" />);
+    const node = TestUtils.findRenderedDOMComponentWithTag(component, 'div');
+
+    assert.equal(node.style.display, 'inline-flex');
+  });
+
   it('should fire `onEnter` -> `onChange` -> `onLeave`', done => {
     const onEnter = () => {};
     const onChange = () => {};
