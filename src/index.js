@@ -5,6 +5,7 @@ import * as PropTypes from 'prop-types';
 
 const UNKNOWN_PROPS = [
   'tagName',
+  'display',
   'onChange',
   'onEnter',
   'onLeave',
@@ -18,6 +19,7 @@ const UNKNOWN_PROPS = [
 export default class ViewportObserver extends React.Component {
   static propTypes = {
     tagName    : PropTypes.string,
+    display    : PropTypes.string,
     onChange   : PropTypes.func,
     onEnter    : PropTypes.func,
     onLeave    : PropTypes.func,
@@ -29,6 +31,7 @@ export default class ViewportObserver extends React.Component {
 
   static defaultProps = {
     tagName    : 'div',
+    display    : '',
     onChange   : () => {},
     onEnter    : () => {},
     onLeave    : () => {},
@@ -101,6 +104,12 @@ export default class ViewportObserver extends React.Component {
       .forEach(key => {
         props[key] = this.props[key];
       });
+
+    if (this.props.display !== '') {
+      props.style = {
+        display : this.props.display
+      };
+    }
 
     return React.createElement(this.props.tagName, {
       ...props,
