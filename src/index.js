@@ -31,7 +31,7 @@ export default class ViewportObserver extends React.Component {
 
   static defaultProps = {
     tagName    : 'div',
-    display    : 'block',
+    display    : '',
     onChange   : () => {},
     onEnter    : () => {},
     onLeave    : () => {},
@@ -105,9 +105,11 @@ export default class ViewportObserver extends React.Component {
         props[key] = this.props[key];
       });
 
-    props.style = {
-      display : this.props.display
-    };
+    if (this.props.display !== '') {
+      props.style = {
+        display : this.props.display
+      };
+    }
 
     return React.createElement(this.props.tagName, {
       ...props,

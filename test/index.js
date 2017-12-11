@@ -19,11 +19,14 @@ describe('ViewportObserver', () => {
     document.body.removeChild(div);
   });
 
-  it('should be rendered as div default', () => {
+  it('should be rendered with default values', () => {
     const component = TestUtils.renderIntoDocument(<ViewportObserver />);
     const node = TestUtils.findRenderedDOMComponentWithTag(component, 'div');
 
     assert.notEqual(node, null);
+
+    assert.equal(node.className, '');
+    assert.equal(node.style.display, '');
   });
 
   it('should be rendered as specified `tagName`', () => {
