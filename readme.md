@@ -39,6 +39,7 @@ You can call `dispose()` of ViewportObserver instance to stop observing and disp
 |  Property   | Type       | Default Value |
 | ----------- | ---------- | ------------- |
 | tagName | `String` | `div` |
+| display | `String` | `''` |
 | onChange | `Function` | `() => {}` |
 | onEnter | `Function` | `() => {}` |
 | onLeave | `Function` | `() => {}` |
