@@ -1,7 +1,6 @@
 # ViewportObserver
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/openfresh/viewport-observer.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/openfresh/viewport-observer.svg?branch=master)](https://travis-ci.org/openfresh/viewport-observer)
 [![devDependency Status](https://david-dm.org/openfresh/viewport-observer/dev-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=dev)
 [![peerDependency Status](https://david-dm.org/openfresh/viewport-observer/peer-status.svg)](https://david-dm.org/openfresh/viewport-observer?type=peer)
