@@ -36,7 +36,7 @@
     "eslint": "^4.13.1",
     "eslint-config-fresh": "^2.3.0",
     "eslint-config-fresh-react": "^2.7.2",
-    "eslint-config-xo-react": "^0.15.0",
+    "eslint-config-xo-react": "^0.16.0",
     "eslint-config-xo-space": "^0.17.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
