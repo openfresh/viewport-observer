@@ -44,9 +44,9 @@ You can call `dispose()` of ViewportObserver instance to stop observing and disp
 | onChange | `Function` | `() => {}` |
 | onEnter | `Function` | `() => {}` |
 | onLeave | `Function` | `() => {}` |
-| [root](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserver-root) | `Node` | `null` |
-| [rootMargin](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-rootmargin) | [`DOMString`](https://heycam.github.io/webidl/#idl-DOMString) | `0px` |
-| [threshold](https://wicg.github.io/IntersectionObserver/#dom-intersectionobserverinit-threshold)  | `Array<Number>` | `[0]` |
+| [root](https://w3c.github.io/IntersectionObserver/#dom-intersectionobserverinit-root) | `Node` | `null` |
+| [rootMargin](https://w3c.github.io/IntersectionObserver/#dom-intersectionobserverinit-rootmargin) | [`DOMString`](https://heycam.github.io/webidl/#idl-DOMString) | `0px` |
+| [threshold](https://w3c.github.io/IntersectionObserver/#dom-intersectionobserverinit-threshold)  | `Array<Number>` | `[0]` |
 
 ## Related
 
