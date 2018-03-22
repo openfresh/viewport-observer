@@ -51,7 +51,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "sinon": "^4.1.0"
+    "sinon": "^5.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
