@@ -4,6 +4,7 @@ dist: trusty
 addons:
   chrome: stable
 node_js:
+  - '10'
   - '8'
   - '6'
 before_script:
