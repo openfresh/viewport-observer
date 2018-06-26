@@ -34,7 +34,7 @@
     "browserify": "^16.0.0",
     "codecov": "^3.0.0",
     "eslint": "^4.17.0",
-    "eslint-config-fresh": "^2.4.0",
+    "eslint-config-fresh": "^3.0.0",
     "eslint-config-fresh-react": "^2.9.0",
     "eslint-config-xo-react": "^0.16.0",
     "eslint-config-xo-space": "^0.18.0",
