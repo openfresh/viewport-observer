@@ -6,6 +6,7 @@ import * as React from 'react';
 declare namespace ViewportObserver {
   export interface Props {
     tagName?: string;
+    display?: string;
     onChange?: (entry: IntersectionObserverEntry) => void;
     onEnter?: () => void;
     onLeave?: () => void;
