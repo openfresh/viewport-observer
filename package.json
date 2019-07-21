@@ -36,7 +36,7 @@
     "babelify": "^8.0.0",
     "browserify": "^16.0.0",
     "codecov": "^3.1.0",
-    "eslint": "^5.9.0",
+    "eslint": "^6.1.0",
     "eslint-config-fresh": "^3.0.0",
     "eslint-config-fresh-react": "^3.0.0",
     "eslint-config-xo-react": "^0.16.0",
