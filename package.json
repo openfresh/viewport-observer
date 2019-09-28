@@ -53,7 +53,7 @@
     "power-assert": "^1.4.4",
     "prop-types": "^15.6.0",
     "react": "^16.10.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.10.1",
     "sinon": "^6.0.0"
   },
   "peerDependencies": {
